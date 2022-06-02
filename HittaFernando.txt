@@ -1,0 +1,43 @@
+
+class Usuario {
+    constructor() {
+        this.nombre = String
+        this.apellido = String
+        this.libros = []
+        this.mascotas = []
+    }
+
+    getFullName() {
+        console.log(`Nombre: ${this.nombre} ${this.apellido}`)
+    }
+
+    addMascota(mascota) {
+        this.mascotas.push(mascota)
+    }
+
+    countMascotas() {
+        console.log(`Mascotas: ${this.mascotas.length}`)
+    }
+
+    addBook(a, b) {
+        this.libros.push({ nombre: a, autor: b})
+    }
+
+    getBookNames(){
+        let bookNames = this.libros.map(libro => libro.nombre);
+        console.log(bookNames);
+    } 
+}
+
+
+const usuario = new Usuario()
+usuario.nombre = "Fernando"
+usuario.apellido = "Hitta"
+usuario.getFullName()
+usuario.addMascota("Michi")
+usuario.addMascota("Guagua")
+usuario.countMascotas()
+usuario.addBook("El Señor de los Anillos","J. R. R. Tolkien")
+usuario.addBook("Harry Potter y la piedra filosofal", "J.K. Rowling")
+usuario.addBook("El principito", "Antoine de Saint-Exupéry")
+usuario.getBookNames()
